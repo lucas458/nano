@@ -1,0 +1,80 @@
+## Here is an example for HTML.
+
+syntax "html" "\.html?$"
+magic "HTML document"
+comment "<!--|-->"
+
+# Tags:
+color cyan "<[[:alpha:]/!?][^>]*>"
+# Bold, italic, and underlined:
+color brightmagenta "</?[biu]>"
+
+# Named character references:
+color red "&[^;[:space:]]*;"
+
+#JS
+# OOP/POO
+color green "\[\]"
+color white "[a-zA-Z_0-9]"
+color brightblue "[a-zA-Z_0-9]*\."
+color brightblue "\.[a-zA-Z_0-9)\.]*"
+#color brightblue "\<\([a-zA-Z_0-9\)]*"
+color cyan "\.[a-zA-Z_0-9)\.]*"
+color blue "[0-9]"
+
+# Declarational stuff.
+color brightcyan "\<(async|class|const|extends|function|typeof|)\>"
+color green "(var|void|let|this)"
+# Flow control and special keywords.
+color brightyellow "\<(do|while|if|else|switch|case|default|for|each|in|of|with)\>"
+color brightyellow "\<(await|export|import|throw|try|catch|finally|new|delete)\>"
+# "Exit" points.
+color brightmagenta "\<(break|continue|return|yield)\>"
+
+# Octal/decimal and hexadecimal numbers.
+color cyan "\<[0-9]+\>" "\<0x[0-9A-Fa-f]+\>"
+
+# Strings.
+color brightmagenta ""(\\.|[^"])*"" "'(\\.|[^'])*'" "`(\\.|[^`])*`"
+
+# Comments.
+color brightblue "(^|[[:space:]])//.*"
+color brightblue start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+
+#simbolos
+color brightcyan "(\.|\?|\(|\))"
+color yellow "\;|\[|\]|\:"
+color brightred "(\/|\+|\-|\*|\%|\-=|\+=|\*=|\/=|\%=|)"
+color brightgreen ">|<|==|===|!|!=|>=|<=|&&|\|\|"
+
+# booleano
+color brightred "false"
+color brightgreen "true"
+
+#CSS
+color brightcyan start="<style>" end="</style>"
+color yellow "[a-zA-Z_0-9]*\{"
+color cyan "<[[:alpha:]/!?][^>]*>"
+color brightmagenta start="\:" end="\;"
+color yellow "\:|\;"
+color blue "\{|\}"
+
+# Comments:
+color yellow start="<!--" end="-->"
+
+#HTML-2
+# Attributes:
+color red "(abbr|accept(-charset)?|accesskey|action|alink|align|alt|archive|axis|background|bgcolor|border)="
+color red "(cell(padding|spacing)|char(off|set)?|checked|cite|class(id)?|compact|code(base|tag)?|cols(pan)?)="
+color red "(content(editable)?|contextmenu|coords|data|datetime|declare|defer|dir|disabled|enctype)="
+color red "(for|frame(border)?|headers|height|hidden|href(lang)?|hspace|http-equiv|id|ismap)="
+color red "(label|lang|link|longdesc|margin(height|width)|maxlength|media|method|multiple)="
+color red "(name|nohref|noresize|noshade|object|onclick|onfocus|onload|onmouseover|profile|readonly|rel|rev)="
+color red "(rows(pan)?|rules|scheme|scope|scrolling|selected|shape|size|span|src|standby|start|style|summary)="
+color red "(tabindex|target|text|title|type|usemap|valign|min|max|value(type)?|vlink|vspace|width|xmlns|xml:space)="
+
+# Strings:
+color green ""(\\.|[^"])*""
