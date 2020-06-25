@@ -36,9 +36,6 @@ color brightblue "\.[a-zA-Z_0-9)\.]*"
 #color brightblue "\<\([a-zA-Z_0-9\)]*"
 color cyan "\.[a-zA-Z_0-9)\.]*"
 color blue "[0-9]"
-color yellow "[A-Z][a-z]*"
-#color yellow "[A-Z][a-z]*\[\]"
-
 
 # Declarational stuff.
 color brightcyan "\<(async|class|const|extends|function|typeof|)\>"
