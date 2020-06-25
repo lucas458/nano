@@ -1,0 +1,62 @@
+## Here is an example for PHP.
+
+syntax "php" "\.ph(p[23457s~]?|tml)$"
+magic "PHP script"
+comment "//"
+
+
+color brightblue "\([a-zA-Z_0-9)\.]*"
+# OOP
+color white "[a-zA-Z_0-9]"
+color brightblue "[a-zA-Z_0-9]*\."
+color brightblue "\.[a-zA-Z_0-9)\.]*"
+color brightblue "\.[a-zA-Z_0-9)\.]*"
+color blue  "\.[a-zA-Z_0-9)\.]*"
+
+
+# PHP markings.
+color brightgreen "(<\?(php)?|\?>)"
+
+# Function names.
+color green "\<[A-Za-z_][A-Za-z_0-9]*\("
+# Variable names.
+color cyan "\$[A-Za-z_][A-Za-z_0-9]*"
+
+# Types.
+color green "\<(array|bool|callable|const|float|global|int|object|string|var)\>"
+color brightgreen "new"
+# Directives and structure.
+color brightcyan "\<(abstract|as|class|clone|(end)?declare|extends|function|implements|include(_once)?|inst(ance|ead)of|interface|namespace|require(_once)?|static|trait|use|yield)\>"
+color blue "\<(case|catch|default|do|echo|else(if)?|end(for(each)?|if|switch|while)|final(ly)?|for(each)?|if|print|switch|throw|try|while)\>"
+# Operators.
+color brightcyan "\<(and|or|xor)\>"
+
+# Control flow.
+color brightred "\<(break|continue|goto|return)\>"
+
+# Strings.
+color brightcyan ""(\.|[^"])*"" "'(\.|[^'])*'"
+
+# Comments.
+color brightblue "(^|[[:space:]]+)//.*"
+color brightblue start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+
+# meu trecho
+#simbolos
+color brightcyan "(\?|\{|\})"
+color yellow "\;|\[|\]|\:|\."
+color brightred "(\/|\+|\-|\*|\%|\-=|\+=|\*=|\/=|\%=|\(|\))"
+color brightgreen ">|<|==|===|!|!=|>=|<=|&&|\|\|"
+
+# booleano C
+color magenta "(true|false)"
+# atribuidor de variavel
+color yellow "="
+
+#class
+color green "public"
+color yellow "protected"
+color brightred "private"

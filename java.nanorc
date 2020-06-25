@@ -1,0 +1,61 @@
+## Here is an example for Java.
+
+syntax "java" "\.java$"
+magic "Java "
+comment "//"
+
+# OOP
+color green "\[\]"
+color white "[a-zA-Z_0-9]"
+color brightblue "[a-zA-Z_0-9]*\."
+color brightblue "\.[a-zA-Z_0-9)\.]*"
+#color brightblue "\<\([a-zA-Z_0-9\)]*"
+color cyan "\.[a-zA-Z_0-9)\.]*"
+color blue "[0-9]"
+color yellow "[A-Z][a-z]*"
+#color yellow "[A-Z][a-z]*\[\]"
+
+
+color brightyellow "\<(boolean|byte|char|double|float|int|long|new|short|this|transient|void)\>"
+color blue "\<(break|case|catch|continue|default|do|else|finally|for|if|return|switch|throw|try|while)\>"
+color brightcyan "\<(abstract|class|extends|final|implements|import|instanceof|interface|native)\>"
+color brightcyan "\<(package|static|strictfp|super|synchronized|throws|volatile)\>"
+color brightmagenta "'([^'\]|(\\["'abfnrtv\\]))'" "'\\(([0-3]?[0-7]{1,2}))'" "'\\x[0-9A-Fa-f]{1,2}'"
+
+color brightcyan "\.|\?"
+color red "\:"
+color brightyellow "\;"
+# color brightblue "\([a-zA-Z_0-9)\.]*"
+color cyan ""[^"]*""
+color green "\[|\]"
+color brightcyan "\{|\}"
+color red "\(|\)"
+color green "(==|!=|!|>|<|<=|>=|&&|\|\|)"
+color brightred "(\+|\-|/|\*|\%|\+=|\-=|\*=|\%=|/=)"
+color brightmagenta "\<(true|false|null|)\>"
+color red "(\\n|\\t|\\r)"
+color blue start="/\*" end="\*/"
+color brightblue start="/\*\*" end="\*/"
+color ,green "[[:space:]]+$"
+
+#funcoes
+# Function names.
+color green "\<[A-Za-z_][A-Za-z_0-9]*\("
+
+# meu trecho
+#simbolos
+color brightcyan "(\:|\?|\{|\})"
+#color yellow "\.|\;|\[|\]|String"
+color brightred "(\/|\+|\-|\*|\%|\-=|\+=|\*=|\/=|\%=|\(|\))"
+color brightgreen ">|<|==|==|!|!=|>=|<=|&&|\|\|"
+# ++ e --
+color cyan "\+\+|\-\-"
+# booleano C
+color brightmagenta "(true|false)"
+# atribuidor de variavel
+color yellow "="
+
+#class
+color brightred "private"
+color brightgreen "public"
+color brightyellow "protected"
