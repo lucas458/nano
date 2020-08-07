@@ -1,0 +1,122 @@
+## Here is an example for C/C++.
+
+syntax "c" "\.(c(c|pp|xx|\+\+)?|C)$" "\.(h(h|pp|xx)?|H)$" "\.ii?$"
+magic "^(C|C\+\+) (source|program)"
+comment "//"
+
+# OOP
+color green "\[\]"
+color white "[a-zA-Z_0-9]"
+color brightblue "[a-zA-Z_0-9]*\."
+color brightblue "\.[a-zA-Z_0-9)\.]*"
+#color brightblue "\<\([a-zA-Z_0-9\)]*"
+
+color cyan "\.[a-zA-Z_0-9)\.]*"
+
+#parenteses
+color brightwhite start="\(" end="\)"
+
+#color yellow "[A-Z][a-z]*\[\]"
+
+
+# Constants.
+color brightred "\<[A-Z_][0-9A-Z_]+\>"
+# Labels.
+color brightmagenta "^[[:space:]]*[A-Z_a-z]+:[[:space:]]*$"
+
+color yellow "[A-Z][a-z]*"
+
+color green "\->[A-Za-z_0-9]*"
+#definicao da funcao
+color green "[A-Za-z_][A-Za-z_0-9]*\("
+color magenta " [A-Za-z_][A-Za-z_0-9]*\("
+
+color brightblue "[0-9]"
+
+color yellow "\<(float|double|bool|char|int|short|long|sizeof|enum|void|auto|static|const|struct|union|typedef|extern|(un)?signed|inline)\>"
+color green "\<((s?size)|((u_?)?int(8|16|32|64|ptr)))_t\>"
+color brightcyan "\<(class|namespace|template|typename|this|friend|virtual|override|using|mutable|volatile|register|explicit)\>"
+
+color green "case [0-9]*"
+
+color brightblue "\<(for|if|while|do|else|case|default|switch)\>"
+color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
+color brightmagenta "\<(goto|continue|break|return)\>"
+color brightcyan "^[[:space:]]*#[[:space:]]*(define|include(_next)?|(un|ifn?)def|endif|el(if|se)|if|warning|error|pragma)"
+color brightmagenta "'([^'\]|(\\["'abfnrtv\\]))'" "'\\(([0-3]?[0-7]{1,2}))'" "'\\x[0-9A-Fa-f]{1,2}'"
+
+
+# GCC builtins.
+color cyan "__attribute__[[:space:]]*\(\([^)]*\)\)" "__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
+
+# Strings.  In general you will want your strings and comments to come last,
+# because highlighting rules are applied in the order they are read in.
+#movido para linha 77
+# Multiline strings.  This regex is VERY resource intensive,
+# and sometimes colours things that shouldn't be coloured.
+###color brightyellow start=""(\\.|[^"])*\\[[:space:]]*$" end="^(\\.|[^"])*""
+
+# Reminders.
+color brightwhite,blue "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+
+
+#chamar funcoes
+# Function names.
+color green "\.[A-Za-z_][A-Za-z_0-9]*\("
+
+# meu trecho
+
+#variaveis
+color yellow "="
+
+#ponteiros
+color brightyellow "\*[A-Za-z_0-9]*"
+
+#enrereco
+color brightblue "&[A-Za-z_0-9]*"
+
+#simbolos
+color brightred "!"
+color brightcyan "(\:|\?|\{|\})"
+color yellow "\.|\[|\]|string"
+color brightred "(\-|\-=|\(|\))"
+color brightgreen "(\/|\*|\%|\+=|\*=|\/=|\%=)"
+color brightgreen "\+|\+\+|>|==|!=|>=|<=|&&|&|\||\^|\|\|"
+color green "\;"
+
+
+#string
+color cyan ""([^"]|\\")*""
+
+#"<[^[:blank:]=]*"
+color green "<"
+#valores nas strings
+color blue "\%\.[0-9]*f"
+color blue "\%[0-9]*x"
+color blue "\%i|%f|%c|%s|\%d|%x"
+
+#caracteres de escape
+color yellow "\\0|\\a|\\b|\\t|\\t|\\f|\\n|\\r"
+
+
+# booleano
+color brightred "\<(false)\>"
+color brightgreen "\<(true)\>"
+
+#OOP 2
+#class
+color brightred "private"
+color brightgreen "public"
+color brightyellow "protected"
+color brightblue "->"
+
+#includes
+color brightred "<[a-zA-Z_0-9]*>"
+color brightred "<[a-zA-Z_0-9]*\.[a-zA-Z_0-9]*>"
+
+# Comments.
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
